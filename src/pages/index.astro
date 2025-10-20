@@ -1,21 +1,112 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
+---  // Frontmatter: Add page metadata here if needed (e.g., title: "Sanctified Church")
 ---
 
-<Layout title="Welcome to Astro.">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanctified Church - Welcoming All in Faith</title>
+  <style>
+    body { font-family: 'Georgia', serif; margin: 0; padding: 0; background: #f8f5f0; color: #333; line-height: 1.6; }
+    header { background: linear-gradient(to right, #8B4513, #D2691E); color: white; text-align: center; padding: 60px 20px; }
+    header h1 { font-size: 2.5em; margin: 0; }
+    nav { background: #654321; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    section { max-width: 1000px; margin: 40px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .event { background: #f9f9f9; padding: 15px; border-left: 4px solid #D2691E; margin-bottom: 10px; }
+    footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    iframe { width: 100%; height: 300px; border: none; }
+    @media (max-width: 768px) { header h1 { font-size: 2em; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sanctified Church</h1>
+    <p>A Place of Grace, Growth, and Community in Midland, MI</p>
+  </header>
+  
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <section id="about">
+    <h2>Welcome to Sanctified Church</h2>
+    <p>At Sanctified Church, we believe in the transformative power of faith. Our community gathers to worship, learn, and serve together. Whether you're new to faith or seeking deeper connection, you're welcome here.</p>
+    <p><strong>Our Mission:</strong> To sanctify lives through the love of Christ, fostering spiritual growth and outreach in Midland, Michigan.</p>
+    <h3>Meet Our Pastor: David Randolph II</h3>
+    <p>Lead Pastor David Randolph II has served our community for over a decade, guiding us with wisdom and compassion. (Add your bio photo and story here!)</p>
+  </section>
+  
+  <section id="services">
+    <h2>Worship Services</h2>
+    <div class="services-grid">
+      <div>
+        <h3>Sunday Morning Service</h3>
+        <p>10:00 AM - In-person & Online<br>Livestream on YouTube.</p>
+      </div>
+      <div>
+        <h3>Wednesday Bible Study</h3>
+        <p>7:00 PM - Fellowship and teaching.</p>
+      </div>
+      <div>
+        <h3>Youth Group</h3>
+        <p>Fridays at 6:00 PM - For ages 13-18.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="events">
+    <h2>Upcoming Events</h2>
+    <div class="event">
+      <h3>Harvest Festival</h3>
+      <p>October 26, 2025 | 4:00 PM - Family fun, games, and food! Join us for a blessed afternoon.</p>
+    </div>
+    <div class="event">
+      <h3>All Saints' Day Service</h3>
+      <p>November 1, 2025 | 6:00 PM - Special evening worship and reflection.</p>
+    </div>
+    <div class="event">
+      <h3>Thanksgiving Outreach</h3>
+      <p>November 23, 2025 | Volunteer to serve meals to the community.</p>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <p><strong>Address:</strong> 3005 Grant, Midland, MI 48640<br>
+    <strong>Phone:</strong> (989) 123-4567 (Update with your real number!)<br>
+    <strong>Email:</strong> info@sanctified.church<br>
+    <strong>Follow Us:</strong> <a href="https://facebook.com/sanctifiedchurch">Facebook</a> | <a href="https://instagram.com/sanctifiedchurch">Instagram</a></p>
+    
+    <h3>Find Us on the Map</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.123456789!2d-84.123456789!3d43.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM3JzI5LjIiTiA4NMKwMDcnMjAuNSJX!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+    
+    <form name="contact" method="POST" netlify style="max-width: 400px; margin-top: 20px;">
+      <p>
+        <label>Name: <input type="text" name="name" required /></label>
+      </p>
+      <p>
+        <label>Email: <input type="email" name="email" required /></label>
+      </p>
+      <p>
+        <label>Message: <textarea name="message" rows="4" required></textarea></label>
+      </p>
+      <p>
+        <button type="submit" style="background: #D2691E; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Send Message</button>
+      </p>
+    </form>
+    <p style="font-size: 0.8em; color: #666; margin-top: 10px;">(Form powered by Netlify—messages go to your email automatically!)</p>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 Sanctified Church. All rights reserved. | <a href="#privacy" style="color: #ccc;">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
